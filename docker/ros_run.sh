@@ -1,5 +1,5 @@
 sudo docker run -dit \
---name=ros_noetic \
+--name=ros_noetic_for_lidar_slam \
 --privileged  \
 --gpus all \
 -v /dev:/dev \
@@ -7,6 +7,7 @@ sudo docker run -dit \
 -v /tmp/.X11-unix:/tmp/.X11-unix  \
 -v /media/howie:/media/howie \
 -e DISPLAY=unix$DISPLAY \
+-e NVIDIA_DRIVER_CAPABILITIES=all \
 -w /home/howie \
 --net=host \
-ros:noetic
+howiehepburn/ros_noetic:v2
